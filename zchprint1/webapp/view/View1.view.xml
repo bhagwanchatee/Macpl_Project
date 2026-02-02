@@ -1,0 +1,7 @@
+<mvc:View controllerName="com.zchprint1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Button text="print" press="onPrint"></Button>
+    </Page>
+</mvc:View>
