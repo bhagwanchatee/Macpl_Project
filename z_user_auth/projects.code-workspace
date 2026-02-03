@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "z_cheque_print",
+			"path": "../z_cheque_print"
+		},
+		{
+			"path": "../z_cust_edi"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../outward_gate_entry"
+		}
+	],
+	"settings": {}
+}

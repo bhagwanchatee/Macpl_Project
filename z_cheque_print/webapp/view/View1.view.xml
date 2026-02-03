@@ -1,0 +1,123 @@
+<mvc:View controllerName="zchequeprint.controller.View1"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Panel class="sapUiContentPadding">
+            <HBox>
+                <VBox width="25%">
+                    <Label text="Bank" required="true"/>
+                    <ComboBox id="idCBoxBank" selectedKey="" width="75%" selectionChange="onSelectChequeType">
+                        <items>
+                            <core:Item key="MGB" text="MGB"/>
+                            <core:Item key="ICICI" text="ICICI"/>
+                            <core:Item key="SBI" text="SBI"/>
+                        </items>
+                    </ComboBox>
+                </VBox>
+                <VBox width="25%">
+                    <Label text="Check Print Type" required="true"/>
+                    <ComboBox id="idCBoxCheckPrintType" selectedKey="" width="75%" selectionChange="onSelectChequeType">
+                        <items>
+                            <core:Item key="Cheque" text="Cheque"/>
+                            <core:Item key="RTGS" text="RTGS"/>
+                            <core:Item key="Bulk RTGS" text="Bulk RTGS"/>
+                        </items>
+                    </ComboBox>
+                </VBox>
+                <VBox width="25%">
+                    <Label text="Fiscal Year"/>
+                    <Input id="idFiscalYear" width="75%" maxLength="4" change="onChangeFiscalYear"/>
+                </VBox>
+                <VBox width="25%">
+                    <Label text="Company Code"/>
+                    <Input id="idCompanyCode" value="1100" width="75%" enabled="false"/>
+                </VBox>
+            </HBox>
+        </Panel>
+
+        <Panel id="idPanelCheque" class="sapUiContentPadding" headerText="Cheque Details" visible="false">
+            <HBox>
+                <VBox width="50%">
+                    <Label text="Document Number" required="true"/>
+                    <Input id="idCheque_DocumentNo" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="documentNumValueHelp" width="75%"/>
+                </VBox>
+                <VBox width="50%">
+                    <Label text="Supplie Name"/>
+                    <Input id="idCheque_SupplieName" maxLength="100" width="75%" enabled="false"/>
+                </VBox>  
+            </HBox>
+
+            <HBox class="sapUiTinyMarginTop">
+                <VBox width="50%">
+                    <Label text="Cheque Date"/>
+                    <Input id="idCheque_ChequeDate" width="75%" enabled="false"/>
+                </VBox>
+                <VBox width="50%">
+                    <Label text="Amount"/>
+                    <Input id="idCheque_Amount" width="75%" enabled="false"/>
+                </VBox>   
+            </HBox>
+
+        </Panel>
+
+        <Panel id="idPanelRTGS" class="sapUiContentPadding" headerText="Cheque Details" visible="false">
+            <HBox>
+                <VBox width="50%">
+                    <Label text="Document Number" required="true"/>
+                    <Input id="idRTGS_DocumentNo" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="documentNumValueHelp" maxLength="10" width="75%"/>
+                </VBox> 
+                 <VBox width="50%">
+                    <Label text="Name on Cheque" required="true"/>
+                    <Input id="idRTGS_SupplieName" maxLength="100" width="75%"/>
+                </VBox>  
+            </HBox>
+
+            <HBox class="sapUiTinyMarginTop">
+            <VBox width="50%">
+                    <Label text="Cheque Date"/>
+                    <Input id="idRTGS_ChequeDate" width="75%" enabled="false"/>
+                </VBox>
+                <VBox width="50%">
+                    <Label text="Amount"/>
+                    <Input id="idRTGS_Amount" width="75%" enabled="false"/>
+                </VBox>
+            </HBox>
+        </Panel>
+
+        <Panel id="idPanelBulkRTGS" class="sapUiContentPadding" headerText="Cheque Details" visible="false">
+            <HBox>
+                <VBox width="50%">
+                    <Label text="Document Number" required="true"/>
+                    <Input id="idBulkRTGS_DocumentNo" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onValueHelpBulkRTGS" maxLength="10" width="75%"/>
+                </VBox>
+                <VBox width="50%">
+                    <Label text="Name on Cheque" required="true"/>
+                    <Input id="idBulkRTGS_SupplieName" maxLength="100" width="75%"/>
+                </VBox>
+            </HBox>
+
+            <HBox class="sapUiTinyMarginTop">
+                <VBox width="50%">
+                    <Label text="Cheque Date"/>
+                    <!-- <Input id="idBulkRTGS_ChequeDate" width="75%" enabled="false"/> -->
+                    <DatePicker id="idBulkRTGS_ChequeDate" width="75%" placeholder="Select Date" displayFormat="MMM dd, yyyy" enabled="true" class="sapUiSmallMarginBottom"/>
+                </VBox> 
+                <VBox width="50%">
+                    <Label text="Total Amount"/>
+                    <Input id="idBulkRTGS_Amount" width="75%" enabled="false"/>
+                </VBox>   
+            </HBox>
+        </Panel>
+
+        <VBox id="idVBox_QRCode" visible="false">
+        </VBox>
+
+        <footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button type="Emphasized" text="Print Cheque" press="printBankCheque" class="sapUiSmallMarginEnd"/>
+			</Toolbar>
+		</footer>
+    </Page>
+</mvc:View>

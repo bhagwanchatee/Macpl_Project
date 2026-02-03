@@ -1,0 +1,26 @@
+specVersion: "3.1"
+metadata:
+  name: zchequeprint
+type: application
+builder:
+  customTasks:
+    - name: ui5-tooling-modules-task
+      afterTask: replaceVersion
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: 0M6F5TC_SAML_ASSERTION_DEV080
+          url: https://my420245.s4hana.cloud.sap
+          authenticationType: reentranceTicket
+        app:
+          name: ZCHECKPRINT
+          description: Bank Check Print
+          package: ZMM_DEV
+          transport: MRFK902140
+        exclude:
+          - /test/
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**

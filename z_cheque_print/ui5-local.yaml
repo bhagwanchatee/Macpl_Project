@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: zchequeprint
+type: application
+framework:
+  name: SAPUI5
+  version: 1.130.8
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: sap.ushell
+    - name: themelib_sap_horizon
+server:
+  customMiddleware:
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: zchequeprint
+        ui5Theme: sap_horizon
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - authenticationType: reentranceTicket
+            path: /sap
+            url: https://my420245.s4hana.cloud.sap
+            destination: 0M6F5TC_SAML_ASSERTION_DEV080
+          - url: https://my420225-api.s4hana.cloud.sap
+            authenticationType: SAMLAssertion
+            destination: 0M6F598_SAML_ASSERTION_DEV100
+            path: /sap/opu/odata/sap/ZB_CHECKPRINT_SERV/
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/ZB_CHECKPRINT_SERV
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
+            generateMockData: true
+        annotations:
+          - localPath: ./webapp/localService/mainService/ZB_CHECKPRINT_SERV_VAN.xml
+            urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZB_CHECKPRINT_SERV_VAN',Version='0001')/$value/
