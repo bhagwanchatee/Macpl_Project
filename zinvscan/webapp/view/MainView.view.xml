@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.fiori.zinvscan.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+  <VBox class="sapUiSmallMargin">
+    <Title text="Scan Supplier Invoice" level="H2" />
+    <HBox alignItems="Center" class="sapUiSmallMarginTop">
+      <Label text="ASN NO.:" labelFor="asnInput" />
+      <Input id="asnInput" width="300px" placeholder="Enter ASN Number" />
+      <Button icon="sap-icon://decline" tooltip="Clear" press="onClear" />
+      <Button icon="sap-icon://search" tooltip="Search" press="onSearch" />
+      <Button text="Go" type="Emphasized" press="onGo" />
+    </HBox>
+    </VBox>
+</mvc:View>
