@@ -1,0 +1,29 @@
+{
+  "fileName": "id_1766420215671_addNewModel",
+  "namespace": "apps/ui.s2p.mm.supplinvoice.manage.s1/appVariants/customer.appvar.suppinv/changes",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "creation": "2025-12-22T16:16:55.671Z",
+  "packageName": "$TMP",
+  "reference": "customer.appvar.suppinv",
+  "support": {
+    "generator": "@sap-ux/adp-tooling"
+  },
+  "changeType": "appdescr_ui5_addNewModel",
+  "content": {
+    "dataSource": {
+      "customer.ZMM_GATE_REPORT_BINDING": {
+        "uri": "/sap/opu/odata/sap/ZMM_GATE_REPORT_BINDING/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "model": {
+      "customer.ZMM_GATE_REPORT_BINDING": {
+        "dataSource": "customer.ZMM_GATE_REPORT_BINDING"
+      }
+    }
+  }
+}

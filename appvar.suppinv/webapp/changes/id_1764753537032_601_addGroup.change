@@ -1,0 +1,38 @@
+{
+  "changeType": "addGroup",
+  "reference": "customer.appvar.suppinv",
+  "namespace": "apps/customer.appvar.suppinv/changes/",
+  "creation": "2025-12-03T09:19:15.940Z",
+  "projectId": "customer.appvar.suppinv",
+  "packageName": "$TMP",
+  "support": {
+    "generator": "@sap-ux/control-property-editor",
+    "sapui5Version": "1.143.0",
+    "command": "createContainer"
+  },
+  "originalLanguage": "EN",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "fileName": "id_1764753537032_601_addGroup",
+  "content": {
+    "group": {
+      "index": 0,
+      "selector": {
+        "id": "MMIV_HEADER_ID_S1--id-1764753529669-595",
+        "idIsLocal": true
+      }
+    }
+  },
+  "texts": {
+    "groupLabel": {
+      "value": "Scan",
+      "type": "XFLD"
+    }
+  },
+  "selector": {
+    "id": "MMIV_HEADER_ID_S1--S2P.MM.MSI.CESmartFormGeneralData",
+    "idIsLocal": true
+  },
+  "dependentSelector": {},
+  "jsOnly": false
+}

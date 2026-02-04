@@ -1,0 +1,82 @@
+{
+  "fileName": "manifest",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "appdescr_variant",
+  "reference": "ui.s2p.mm.supplinvoice.manage.s1",
+  "id": "customer.appvar.suppinv",
+  "namespace": "apps/ui.s2p.mm.supplinvoice.manage.s1/appVariants/customer.appvar.suppinv/",
+  "version": "0.1.0",
+  "content": [
+    {
+      "changeType": "appdescr_ui5_addNewModelEnhanceWith",
+      "content": {
+        "modelId": "i18n",
+        "bundleUrl": "i18n/i18n.properties",
+        "supportedLocales": [
+          ""
+        ],
+        "fallbackLocale": ""
+      }
+    },
+    {
+      "changeType": "appdescr_ui5_setMinUI5Version",
+      "content": {
+        "minUI5Version": "1.136.11"
+      }
+    },
+    {
+      "changeType": "appdescr_app_setTitle",
+      "content": {},
+      "texts": {
+        "i18n": "i18n/i18n.properties"
+      }
+    },
+    {
+      "changeType": "appdescr_app_addNewInbound",
+      "content": {
+        "inbound": {
+          "customer.SupplierInvoice-create_New": {
+            "action": "create_New",
+            "semanticObject": "SupplierInvoice",
+            "icon": "sap-icon://Fiori2/F0025",
+            "title": "{{customer.appvar.suppinv_sap.app.crossNavigation.inbounds.customer.SupplierInvoice-create_New.title}}",
+            "signature": {
+              "additionalParameters": "allowed",
+              "parameters": {
+                "Mode": {
+                  "defaultValue": {
+                    "value": "01",
+                    "format": "plain"
+                  }
+                },
+                "sap-keep-alive": {
+                  "defaultValue": {
+                    "value": "false",
+                    "format": "plain"
+                  }
+                },
+                "sap-tag": {
+                  "defaultValue": {
+                    "value": "suppressInEnterpriseSearch",
+                    "format": "plain"
+                  }
+                }
+              }
+            },
+            "subTitle": "{{customer.appvar.suppinv_sap.app.crossNavigation.inbounds.customer.SupplierInvoice-create_New.subTitle}}"
+          }
+        }
+      },
+      "texts": {
+        "i18n": "i18n/i18n.properties"
+      }
+    },
+    {
+      "changeType": "appdescr_app_removeAllInboundsExceptOne",
+      "content": {
+        "inboundId": "customer.SupplierInvoice-create_New"
+      },
+      "texts": {}
+    }
+  ]
+}

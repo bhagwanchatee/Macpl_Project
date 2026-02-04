@@ -1,0 +1,10 @@
+<!-- Use stable and unique IDs!-->
+<core:FragmentDefinition xmlns:core='sap.ui.core' xmlns='sap.m'>
+    <!--  add your xml here -->
+    <HBox id="idhbox">
+    <Label text="ASN NO.: " labelFor="asnInput" id="idLbl" class="sapUiSmallMarginEnd"/>
+      <Input id="asnInput"  width="300px" placeholder="Enter ASN Number" showClearIcon="true" class="sapUiSmallMarginEnd"/>
+      <Button text="Go" type="Emphasized" id="idBtn" press=".extension.customer.appvar.suppinv.ObjExt.onGo" class="sapUiSmallMarginStart"/>
+      <Button text="Clear"  id="idBtnClr" press=".extension.customer.appvar.suppinv.ObjExt.onClear" class="sapUiMediumMarginStart"/>
+      </HBox>
+</core:FragmentDefinition>

@@ -1,0 +1,29 @@
+{
+  "fileName": "id_1764757335648_addNewModel",
+  "namespace": "apps/ui.s2p.mm.supplinvoice.manage.s1/appVariants/customer.appvar.suppinv/changes",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "creation": "2025-12-03T10:22:15.648Z",
+  "packageName": "$TMP",
+  "reference": "customer.appvar.suppinv",
+  "support": {
+    "generator": "@sap-ux/adp-tooling"
+  },
+  "changeType": "appdescr_ui5_addNewModel",
+  "content": {
+    "dataSource": {
+      "customer.ZC_PO_HEADER": {
+        "uri": "/sap/opu/odata/sap/ZC_PO_HEADER/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "model": {
+      "customer.ZC_PO_HEADER": {
+        "dataSource": "customer.ZC_PO_HEADER"
+      }
+    }
+  }
+}

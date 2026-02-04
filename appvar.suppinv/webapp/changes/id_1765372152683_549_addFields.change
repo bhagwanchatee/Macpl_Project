@@ -1,0 +1,53 @@
+{
+  "changeType": "addFields",
+  "reference": "customer.appvar.suppinv",
+  "namespace": "apps/customer.appvar.suppinv/changes/",
+  "creation": "2025-12-10T13:09:17.167Z",
+  "projectId": "customer.appvar.suppinv",
+  "packageName": "$TMP",
+  "support": {
+    "generator": "@sap-ux/control-property-editor",
+    "sapui5Version": "1.143.0",
+    "compositeCommand": "id_1765372152683_550_composite",
+    "command": "addDelegateProperty"
+  },
+  "oDataInformation": {
+    "oDataServiceUri": "/sap/opu/odata/sap/MM_SUPPLIER_INVOICE_MANAGE/",
+    "propertyName": "YY1_GateEntry_MIH",
+    "entityType": "Header"
+  },
+  "originalLanguage": "EN",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "fileName": "id_1765372152683_549_addFields",
+  "content": {
+    "field": {
+      "value": [
+        "YY1_GateEntry_MIH"
+      ],
+      "valueProperty": [
+        "value"
+      ],
+      "selector": {
+        "id": "MMIV_HEADER_ID_S1--idS2P.MM.MSI.CESmartGroupGeneralDataGroup3_Header_YY1_GateEntry_MIH",
+        "idIsLocal": true
+      },
+      "jsTypes": [
+        "sap.ui.comp.smartfield.SmartField"
+      ],
+      "index": 2
+    }
+  },
+  "texts": {},
+  "selector": {
+    "id": "MMIV_HEADER_ID_S1--idS2P.MM.MSI.CESmartGroupGeneralDataGroup3",
+    "idIsLocal": true
+  },
+  "dependentSelector": {
+    "form": {
+      "id": "MMIV_HEADER_ID_S1--S2P.MM.MSI.CESmartFormGeneralData",
+      "idIsLocal": true
+    }
+  },
+  "jsOnly": false
+}

@@ -1,0 +1,29 @@
+{
+  "fileName": "id_1764757464016_addNewModel",
+  "namespace": "apps/ui.s2p.mm.supplinvoice.manage.s1/appVariants/customer.appvar.suppinv/changes",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "change",
+  "creation": "2025-12-03T10:24:24.016Z",
+  "packageName": "$TMP",
+  "reference": "customer.appvar.suppinv",
+  "support": {
+    "generator": "@sap-ux/adp-tooling"
+  },
+  "changeType": "appdescr_ui5_addNewModel",
+  "content": {
+    "dataSource": {
+      "customer.ZSB_INWARDGATEENTRY": {
+        "uri": "/sap/opu/odata/sap/ZSB_INWARDGATEENTRY/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "model": {
+      "customer.ZSB_INWARDGATEENTRY": {
+        "dataSource": "customer.ZSB_INWARDGATEENTRY"
+      }
+    }
+  }
+}
