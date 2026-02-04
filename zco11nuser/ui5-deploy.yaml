@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: zco11nuser
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: 0M6F5TC_SAML_ASSERTION_DEV080
+          url: https://my420245.s4hana.cloud.sap
+          authenticationType: reentranceTicket # SAML support for vscode
+        app:
+          name: ZUSERCO11N
+          package: ZPP_USER_AUTH
+          transport: MRFK901790
+        exclude:
+          - /test/
