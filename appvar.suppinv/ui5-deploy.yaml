@@ -103,7 +103,7 @@ builder:
           name: ZCSISCAN
           description: Create suppliear invoice using scan
           package: ZVENDORINVOICE
-          transport: MRFK902221
+          transport: MRFK902231
         exclude:
           - /test/
   resources:

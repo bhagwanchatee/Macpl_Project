@@ -1,0 +1,256 @@
+{
+  "_version": "1.73.1",
+  "sap.app": {
+    "id": "hodek.gateapps",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.5",
+      "toolsId": "f9a2fddb-4f49-48d4-91b8-e3add3b87b7f"
+    },
+    "dataSources": {
+      "ZMM_VEND_PORT_SER_BIND_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZMM_VEND_PORT_SER_BIND_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/ZMM_VEND_PORT_SER_BIND_VAN.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZMM_VEND_PORT_SER_BIND/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZMM_VEND_PORT_SER_BIND_VAN"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "gateapps-managed": {
+          "semanticObject": "gateapps",
+          "action": "managed",
+          "title": "{{gateapps-managed.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.5",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "config": {
+      "fullWidth": true
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "hodek.gateapps.i18n.i18n"
+        }
+      },
+      "vendorModel": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "hodek.gateapps.view",
+        "async": true,
+        "viewPath": "hodek.gateapps.view"
+      },
+      "routes": [
+        {
+          "name": "RouteGEAsn",
+          "pattern": "",
+          "target": [
+            "TargetGEAsn"
+          ]
+        },
+        {
+          "name": "RouteGEWasn",
+          "pattern": "gateEntrybyPoSa",
+          "target": [
+            "TargetGEposa"
+          ]
+        },
+        {
+          "name": "RouteGEPlantSto",
+          "pattern": "gateEntryPlantSto",
+          "target": [
+            "TargetGEPlantSto"
+          ]
+        },
+        {
+          "name": "RouteGEAsItIs",
+          "pattern": "gateEntrybyasitis",
+          "target": [
+            "TargetGEAsItIs"
+          ]
+        },
+        {
+          "name": "RouteGEReturn",
+          "pattern": "gateEntrybyreturn",
+          "target": [
+            "TargetGEReturn"
+          ]
+        },
+        {
+          "name": "RouteGEAsnDetail",
+          "pattern": "asnDetail/{asn}",
+          "target": [
+            "TargetGEAsnDetail"
+          ]
+        },
+        {
+          "name": "RouteGEReprint",
+          "pattern": "reprint",
+          "target": [
+            "TargetGEReprint"
+          ]
+        },
+        {
+          "name": "RouteCancelGE",
+          "pattern": "cancel",
+          "target": [
+            "TargetCancelGE"
+          ]
+        }
+      ],
+      "targets": {
+         "TargetGEReprint": {
+          "id": "ReprintGE",
+          "name": "ReprintGE",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        },
+         "TargetGEAsn": {
+          "id": "GEAsn",
+          "name": "GEAsn",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        },
+         "TargetGEposa": {
+          "id": "GEposa",
+          "name": "GEposa",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        },
+         "TargetGEPlantSto": {
+          "id": "GEPlantSto",
+          "name": "GEPlantSto",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        },
+         "TargetGEAsItIs": {
+          "id": "GERetrunAsItIs",
+          "name": "GERetrunAsItIs",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        },
+         "TargetGEReturn": {
+          "id": "GERetrun",
+          "name": "GERetrun",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        },
+         "TargetGEAsnDetail": {
+          "id": "GEAsnDetail",
+          "name": "GEAsnDetail",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        },
+        "TargetCancelGE": {
+          "id": "CancelGE",
+          "name": "CancelGE",
+          "viewType": "XML",
+          "viewLevel": 2,
+          "controlId": "Main__NavContainer",
+          "controlAggregation": "pages",
+          "clearControlAggregation": true
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "hodek.gateapps.view.Main",
+      "type": "XML",
+      "id": "Main",
+      "async": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<mvc:View controllerName="hodek.gateapps.controller.GEAsn"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:upload="sap.m.upload"
+    xmlns:svm="sap.ui.comp.smartvariants">
+    <Page id="asnCreationpage" title="{i18n>title}" class="fullPageBackground" showFooter="true" titleAlignment="Auto" showNavButton="true" showHeader="false" navButtonPress="onNavBack">
+        <HBox width="100%" justifyContent="Center" alignItems="Center" height="90%">
+            <VBox class="formContainer" justifyContent="Center" alignItems="Center" width="25rem" height="15rem">
+
+                <!-- Label -->
+                <Label text="Enter ASN Number:" design="Bold" labelFor="idAsnInput" class="formLabel" width="100%"/>
+
+                <!-- Input -->
+                <SearchField id="idAsnInput" value="" class="searchDesign" width="20rem" maxLength="10" placeholder="Scan or Type ASN.." search="onSubmitPress"  liveChange="onAsnLiveChange"/>
+
+                <!-- Submit Button -->
+                <Button text="Search" type="Emphasized" press="onSubmitPress" class="formButton sapUiMediumMarginTop"/>
+
+            </VBox>
+        </HBox>
+    </Page>
+</mvc:View>

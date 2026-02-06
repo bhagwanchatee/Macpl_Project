@@ -5,7 +5,7 @@
   "reference": "ui.s2p.mm.supplinvoice.manage.s1",
   "id": "customer.appvar.suppinv",
   "namespace": "apps/ui.s2p.mm.supplinvoice.manage.s1/appVariants/customer.appvar.suppinv/",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "content": [
     {
       "changeType": "appdescr_ui5_addNewModelEnhanceWith",

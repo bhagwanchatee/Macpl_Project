@@ -8,11 +8,10 @@
         "sapui5",
         "adaptation-project"
     ],
-    "dependencies": {},
     "devDependencies": {
-        "@sap/ux-ui5-tooling": "1",
-        "@ui5/task-adaptation": "^1.3.0",
+        "@sap/ux-ui5-tooling": "^1.20.2",
         "@ui5/cli": "^4.0.33",
+        "@ui5/task-adaptation": "^1.3.0",
         "rimraf": "^5.0.5"
     },
     "scripts": {

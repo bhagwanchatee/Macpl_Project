@@ -219,6 +219,7 @@ sap.ui.define(
                                 oModel.setProperty(sPath + "/IN_GSTPlaceOfSupply", oData.results[0].IN_GSTPlaceOfSupply);
                                 oModel.setProperty(sPath + "/InvoiceGrossAmount", oData.results[0].InvoiceGrossAmount);
                                 oModel.setProperty(sPath + "/BusinessPlace", oData.results[0].BusinessPlace);
+                                oModel.setProperty(sPath + "/InvoicingParty", oData.results[0].InvoicingParty);
 
                                 if (oData.results[0].BusinessPlace === "3300") {
                                     oModel.setProperty(sPath + "/YY1_ZPlaceOfSupply_MIH", "TN");
@@ -271,9 +272,13 @@ sap.ui.define(
                                         if (oCtx && !oCtx.getProperty("BusinessSectionCode")) {
                                             oCtx.setProperty("BusinessSectionCode", "1100");
                                         }
+                                        if(oCtx1 && oCtx1.getProperty("YY1_GateEntry_MIH")){
+                                            oCtx.setProperty("InvoicingParty", oData.results[0].InvoicingParty);
+                                        }
                                         //var oSF1 = oView.byId("application-app-preview-component---MMIV_HEADER_ID_S1--idS2P.MM.MSI.SmartFieldDueCalculationBaseDate");
                                         var oSF1 = oView.byId("application-SupplierInvoice-create_New-component---MMIV_HEADER_ID_S1--idS2P.MM.MSI.SmartFieldDueCalculationBaseDate");
                                         var oCtx1 = oSF1.getBindingContext();
+                                        oSF1.setValue(baselineDate);
                                         if (oCtx1 && !oCtx1.getProperty("DueCalculationBaseDate")) {
                                             oCtx1.setProperty("DueCalculationBaseDate", baselineDate);
                                         }
@@ -350,6 +355,20 @@ sap.ui.define(
                     if (oSmartField && oSmartField.attachChange) {
                         oSmartField.attachChange(this.base.executeCheck, this.base);
                     }
+                    var oCheckButton =this.getView().byId("idS2P.MM.MSI.ButtonCheck");
+                    oCheckButton.attachPress(function(oEvent) {
+                          console.log("Custom logic before check"); 
+                         var oSF1 = this.base.byId(this.STRING + "-component---MMIV_HEADER_ID_S1--idS2P.MM.MSI.SmartFieldDueCalculationBaseDate");
+                                        var oCtx = oSF1.getBindingContext();
+                                        if (oCtx) {
+                                            oSF1.setValue(baselineDate);
+                                            oCtx.setProperty("DueCalculationBaseDate", baselineDate);
+                                        }
+
+
+                          this.base.executeCheck();
+                         }, this);
+    
 
                     // Get your SmartField
                     var oSF1 = this.base.byId(this.STRING + "-component---MMIV_HEADER_ID_S1--idS2P.MM.MSI.SmartFieldDueCalculationBaseDate");
